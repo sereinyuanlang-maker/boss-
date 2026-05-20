@@ -1,0 +1,122 @@
+# Boss直聘自动投简历工具配置文件
+
+# 账号配置
+account:
+  username: ""
+  password: ""
+  # 验证码处理: auto(自动识别), manual(手动输入), skip(跳过)
+  captcha_mode: "manual"
+
+# 浏览器配置
+browser:
+  # 浏览器类型: chrome, firefox, edge
+  type: "chrome"
+  # 是否无头模式
+  headless: false
+  # 窗口宽度
+  width: 1920
+  # 窗口高度
+  height: 1080
+  # 用户数据目录(保持登录状态)
+  user_data_dir: "./browser_data"
+  # 是否使用undetected-chromedriver
+  use_undetected: true
+
+# 投递配置
+delivery:
+  # 每日投递上限
+  daily_limit: 50
+  # 投递间隔范围(秒)
+  interval_min: 5
+  interval_max: 15
+  # 随机化操作时间范围(秒)
+  random_delay_min: 1
+  random_delay_max: 3
+  # 是否发送自定义打招呼语
+  use_custom_greeting: true
+  # 自定义打招呼语
+  custom_greeting: ""
+  # 投递时间段限制
+  active_hours:
+    start: "09:00"
+    end: "18:00"
+
+# 职位筛选条件
+filters:
+  # 搜索关键词
+  keywords:
+    - "Python"
+    - "后端开发"
+  # 城市列表
+  cities:
+    - "北京"
+    - "上海"
+    - "深圳"
+    - "杭州"
+  # 薪资范围(单位: K)
+  salary_min: 15
+  salary_max: 50
+  # 工作经验要求(年)
+  experience_min: 1
+  experience_max: 5
+  # 学历要求: 不限, 大专, 本科, 硕士, 博士
+  education: "本科"
+  # 公司规模
+  company_size:
+    - "20-99人"
+    - "100-499人"
+    - "500-999人"
+    - "1000-9999人"
+    - "10000人以上"
+  # 行业类型
+  industries:
+    - "互联网"
+    - "计算机软件"
+    - "人工智能"
+  # 融资阶段
+  finance_stage:
+    - "不需要融资"
+    - "未融资"
+    - "天使轮"
+    - "A轮"
+    - "B轮"
+    - "C轮"
+    - "D轮及以上"
+    - "已上市"
+  # 职位类型: 全职, 兼职, 实习
+  job_type: "全职"
+  # 排除关键词
+  exclude_keywords:
+    - "外包"
+    - "派遣"
+
+# 简历配置
+resume:
+  # 简历文件路径(PDF格式)
+  file_path: "./resume.pdf"
+  # 个人基本信息
+  name: ""
+  phone: ""
+  email: ""
+  # 期望薪资
+  expected_salary: ""
+  # 期望城市
+  expected_city: ""
+  # 自我评价
+  self_evaluation: ""
+
+# 日志配置
+logging:
+  level: "INFO"
+  file: "./logs/boss_automation.log"
+  max_size: "10MB"
+  backup_count: 5
+
+# 数据存储
+data:
+  # 投递记录文件
+  delivery_record: "./data/delivery_records.xlsx"
+  # 职位缓存文件
+  job_cache: "./data/job_cache.json"
+  # 已投递职位ID列表
+  delivered_ids: "./data/delivered_ids.txt"
