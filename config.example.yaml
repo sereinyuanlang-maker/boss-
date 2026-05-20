@@ -1,0 +1,117 @@
+# Boss直聘自动投简历工具配置文件
+
+# ==================== 搜索配置 ====================
+search:
+  # 职位关键词列表（支持多个，用英文逗号分隔）
+  keywords:
+    - Python开发
+    - 后端工程师
+    - 全栈工程师
+
+  # 目标城市列表（支持多个）
+  cities:
+    - 北京
+    - 上海
+    - 深圳
+
+  # 薪资范围（可选）
+  # 示例: "15k-30k", "20k-40k"
+  salary_range: "15k-30k"
+
+  # 经验要求（可选）
+  # 示例: "3-5年", "5-10年", "经验不限"
+  experience: "3-5年"
+
+  # 学历要求（可选）
+  # 示例: "本科", "硕士", "大专"
+  degree: "本科"
+
+  # 公司规模（可选）
+  # 示例: "100-499人", "500-999人", "1000-9999人"
+  company_size: "100-499人"
+
+  # 融资阶段（可选）
+  # 示例: "A轮", "B轮", "C轮", "上市公司"
+  financing_stage: "B轮"
+
+  # 工作类型（可选）
+  # 示例: "全职", "兼职", "实习"
+  job_type: "全职"
+
+  # 发布日期（可选）
+  # 示例: "最近3天", "最近7天", "最近30天"
+  publish_date: "最近7天"
+
+# ==================== 简历配置 ====================
+resume:
+  # 您的姓名（必填）
+  name: "张三"
+
+  # 联系电话（可选）
+  phone: "13800138000"
+
+  # 电子邮箱（可选）
+  email: "zhangsan@example.com"
+
+  # 自我介绍/求职意向（可选）
+  self_introduction: |
+    您好，我是一名有5年经验的Python开发工程师，
+    熟悉Django、Flask、FastAPI等Web框架，
+    有丰富的微服务架构和云原生开发经验。
+
+  # 打招呼模板（可选）
+  # 支持占位符: {name} - 您的姓名, {company} - 公司名, {position} - 职位名
+  greeting_template: |
+    您好，我是{name}，对贵公司的{position}职位非常感兴趣。
+    我有丰富的相关经验，希望能有机会加入贵公司。
+    期待您的回复，谢谢！
+
+  # 简历PDF文件路径（可选）
+  resume_pdf_path: "./resume.pdf"
+
+# ==================== 投递策略配置 ====================
+strategy:
+  # 每日最大投递数量（1-200）
+  max_applications_per_day: 50
+
+  # 请求间隔范围（秒）
+  min_interval_seconds: 5
+  max_interval_seconds: 15
+
+  # 是否模拟随机点击
+  random_click: true
+
+  # 是否随机滚动页面
+  scroll_randomly: true
+
+  # 是否使用无头模式（不显示浏览器窗口）
+  headless: false
+
+  # 隐式等待时间（秒）
+  implicit_wait: 10
+
+  # 页面加载超时（秒）
+  page_load_timeout: 30
+
+  # 失败重试次数
+  retry_times: 3
+
+# ==================== 通知配置 ====================
+notification:
+  # 是否启用邮件通知
+  enable_email: false
+
+  # SMTP服务器地址
+  smtp_server: "smtp.qq.com"
+
+  # SMTP端口
+  smtp_port: 587
+
+  # 发件人邮箱
+  sender_email: "your_email@qq.com"
+
+  # 发件人邮箱密码/授权码
+  sender_password: "your_auth_code"
+
+  # 收件人邮箱
+  receiver_email: "your_email@qq.com"
